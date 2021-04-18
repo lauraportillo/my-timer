@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <title>Laura Portillo</title>
+</head>
+
+<body class="container">
+    <header>
+        <h1 class="title">Timer</h1>
+    </header>
+    <main class="containerMain">
+        <form class="containerForm">
+            <div class="containerForm__input">
+                <label for="hours" class="subtitleHour">Hours</label>
+                <input type="number" name="hours" id="hours" class="js-hours hours" min="0" max="23" value="0">
+            </div>
+            <div class="containerForm__input">
+                <label for="minutes" class="subtitle">Minutes</label>
+                <input type="number" name="minutes" id="minutes" class="js-minutes minutes" min="0" max="59" value="0">
+            </div>
+            <div class="containerForm__input">
+                <label for="seconds" class="subtitle">Seconds</label>
+                <input type="number" name="seconds" id="seconds" class="js-seconds seconds" min="0" max="59" value="5">
+            </div>
+            <div class="btns">
+                <button class="js-btnStart btn">►</button>
+                <button class="js-btnPause btn">❚❚</button>
+                <button class="js-btnStop btn">■</button>
+            </div>
+        </form>
+        <div class="containerTimer">
+            <span class="js-counter timer">00 : 00 : 00</span>
+        </div>
+        <span class="js-end"></span>
+    </main>
+    <footer class="containerFooter">
+        <div class="bouncingBall1"></div>
+        <div class="bouncingBall2"></div>
+        <div class="bouncingBall3"></div>
+        <div class="bouncingBall4"></div>
+        <div class="bouncingBall5"></div>
+
+        <a href="https://www.linkedin.com/in/laura-portillo-rodríguez" target="_blank" class="containerFooter__name">
+            <small>By Laura Portillo Rodríguez</small>
+        </a>
+        <small>©2021</small>
+
+    </footer>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
