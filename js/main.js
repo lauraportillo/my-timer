@@ -16,58 +16,38 @@ let interval;
 
 function handleStartBtn(evt) {
   evt.preventDefault();
-  const hours = parseInt(hoursElement.value).toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
-  const minutes = parseInt(minutesElement.value).toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
-  const seconds = parseInt(secondsElement.value).toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
+  const hours = parseInt(hoursElement.value);
+  const minutes = parseInt(minutesElement.value);
+  const seconds = parseInt(secondsElement.value);
   counterSeconds = seconds;
   counterMinutes = minutes;
   counterHours = hours;
-  counterElement.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+  paintTimer(hours, minutes, seconds);
 
-  // 1000 milisegundo se trabaja en informática equivale a cada 1 segundo
-  interval = setInterval(handleCounter, 1000, hours, minutes, seconds);
+  if (counterHours !== 0 || counterMinutes !== 0 || counterSeconds !== 0) {
+    // 1000 milisegundo se trabaja en informática equivale a cada 1 segundo
+    interval = setInterval(handleCounter, 1000, hours, minutes, seconds);
+  }
 }
 
 function handleCounter() {
-  let counterSecondsTwoDigits = (counterSeconds -= 1).toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
-  let counterMinutesTwoDigits = counterMinutes.toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
-  // SEGUIR CON LAS HORAS
-  let counterHoursTwoDigits = counterHours.toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
-
-  counterElement.innerHTML = `${counterHoursTwoDigits} : ${counterMinutesTwoDigits} : ${counterSecondsTwoDigits}`;
-
-  if (counterSeconds === 0) {
-    counterMinutes = counterMinutes - 1;
-    counterSeconds = 60;
+  counterSeconds -= 1;
+  if (counterSeconds === -1 && counterMinutes !== 0) {
+    counterMinutes -= 1;
+    counterSeconds = 59;
   }
-  if (counterMinutes === 0) {
-    counterHours = counterHours - 1;
+  if (counterMinutes === -1 && counterHours !== 0) {
+    counterHours -= 1;
     counterMinutes = 59;
   }
 
+  console.log(counterHours, counterMinutes, counterSeconds);
   if (counterSeconds === 0 && counterMinutes === 0 && counterHours === 0) {
     clearInterval(interval); // sirve para parar el tiempo
     endElement.innerHTML = 'time is over';
     //esta condición no está funcionando
   }
+  paintTimer(counterHours, counterMinutes, counterSeconds);
 }
 
 function handlePauseBtn(evt) {
@@ -78,6 +58,22 @@ function handlePauseBtn(evt) {
 
 function handleStopBtn() {
   clearInterval(interval);
+}
+
+function paintTimer(hours, minutes, seconds) {
+  let counterSecondsTwoDigits = seconds.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  let counterMinutesTwoDigits = minutes.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  let counterHoursTwoDigits = hours.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  counterElement.innerHTML = `${counterHoursTwoDigits} : ${counterMinutesTwoDigits} : ${counterSecondsTwoDigits}`;
 }
 
 buttonStartElement.addEventListener('click', handleStartBtn);
