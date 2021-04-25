@@ -72,7 +72,7 @@ function paintTimer(hours, minutes, seconds) {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
-  counterElement.innerHTML = `${counterHoursTwoDigits} : ${counterMinutesTwoDigits} : ${counterSecondsTwoDigits}`;
+  counterElement.innerHTML = `${counterHoursTwoDigits}:${counterMinutesTwoDigits}:${counterSecondsTwoDigits}`;
 }
 
 buttonStartElement.addEventListener('click', handleStartBtn);
