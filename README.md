@@ -8,7 +8,7 @@ So I decided to make **my own timer** with **Vanilla JS** and styles using **CSS
 
 The most important thing, **the time**, is working and soon I will upload the improvements.
 
-### `time goes by so slowly 🐢 🐢 🐢!`
+`time goes by so slowly 🐢 🐢 🐢!`
 
 - [GitHub Profile](https://github.com/lauraportillo)
 - [LinkedIn Profile](https://www.linkedin.com/in/laura-portillo-rodr%C3%ADguez/)
