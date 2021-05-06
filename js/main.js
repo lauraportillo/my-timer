@@ -59,6 +59,7 @@ function handleStopBtn(evt) {
   clearInterval(interval);
   paintTimer(0, 0, 0);
   endElement.innerHTML = '';
+  audioElement.pause();
 }
 
 function paintTimer(hours, minutes, seconds) {
