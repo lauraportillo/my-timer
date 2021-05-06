@@ -43,7 +43,7 @@ function handleCounter() {
 
   if (counterSeconds === 0 && counterMinutes === 0 && counterHours === 0) {
     clearInterval(interval); // sirve para parar el tiempo
-    endElement.innerHTML = 'time is over';
+    endElement.innerHTML = 'Time is over';
     audioElement.play();
   }
   paintTimer(counterHours, counterMinutes, counterSeconds);
