@@ -9,6 +9,7 @@ const buttonStopElement = document.querySelector('.js-btnStop');
 const counterElement = document.querySelector('.js-counter');
 const endElement = document.querySelector('.js-end');
 const audioElement = document.querySelector('.js-audio');
+const formElement = document.querySelector('.js-form');
 
 let counterHours = 0;
 let counterSeconds = 0;
@@ -45,6 +46,7 @@ function handleCounter() {
     clearInterval(interval); // sirve para parar el tiempo
     endElement.innerHTML = 'Time is over';
     audioElement.play();
+    formElement.reset();
   }
   paintTimer(counterHours, counterMinutes, counterSeconds);
 }
