@@ -16,6 +16,12 @@ const ball3Element = document.querySelector('.js-ball3');
 const ball4Element = document.querySelector('.js-ball4');
 const ball5Element = document.querySelector('.js-ball5');
 
+const ball1ElementPaused = document.querySelector('.js-paused');
+const ball2ElementPaused = document.querySelector('.js-paused');
+const ball3ElementPaused = document.querySelector('.js-paused');
+const ball4ElementPaused = document.querySelector('.js-paused');
+const ball5ElementPaused = document.querySelector('.js-paused');
+
 let counterHours = 0;
 let counterSeconds = 0;
 let counterMinutes = 0;
@@ -30,14 +36,14 @@ function handleStartBtn(evt) {
   if (counterHours !== 0 || counterMinutes !== 0 || counterSeconds !== 0) {
     // 1000 milisegundo se trabaja en informática equivale a cada 1 segundo
     interval = setInterval(handleCounter, 1000);
+    ball1Element.classList.add('bouncingBall1-animated');
+    ball2Element.classList.add('bouncingBall2-animated');
+    ball3Element.classList.add('bouncingBall3-animated');
+    ball4Element.classList.add('bouncingBall4-animated');
+    ball5Element.classList.add('bouncingBall5-animated');
   }
   endElement.innerHTML = '';
   paintTimer(counterHours, counterMinutes, counterSeconds);
-  ball1Element.classList.add('bouncingBall1-animated');
-  ball2Element.classList.add('bouncingBall2-animated');
-  ball3Element.classList.add('bouncingBall3-animated');
-  ball4Element.classList.add('bouncingBall4-animated');
-  ball5Element.classList.add('bouncingBall5-animated');
 }
 
 function handleCounter() {
@@ -64,6 +70,11 @@ function handleCounter() {
 function handlePauseBtn(evt) {
   evt.preventDefault();
   clearInterval(interval);
+  ball1ElementPaused.classList.add('paused');
+  ball2ElementPaused.classList.add('paused');
+  ball3ElementPaused.classList.add('paused');
+  ball4ElementPaused.classList.add('paused');
+  ball5ElementPaused.classList.add('paused');
 }
 
 function handleStopBtn(evt) {
