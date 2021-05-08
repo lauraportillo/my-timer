@@ -72,6 +72,11 @@ function handleStopBtn(evt) {
   paintTimer(0, 0, 0);
   endElement.innerHTML = '';
   audioElement.pause();
+  ball1Element.classList.remove('bouncingBall1-animated');
+  ball2Element.classList.remove('bouncingBall2-animated');
+  ball3Element.classList.remove('bouncingBall3-animated');
+  ball4Element.classList.remove('bouncingBall4-animated');
+  ball5Element.classList.remove('bouncingBall5-animated');
 }
 
 function paintTimer(hours, minutes, seconds) {
