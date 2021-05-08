@@ -10,6 +10,11 @@ const counterElement = document.querySelector('.js-counter');
 const endElement = document.querySelector('.js-end');
 const audioElement = document.querySelector('.js-audio');
 const formElement = document.querySelector('.js-form');
+const ball1Element = document.querySelector('.js-ball1');
+const ball2Element = document.querySelector('.js-ball2');
+const ball3Element = document.querySelector('.js-ball3');
+const ball4Element = document.querySelector('.js-ball4');
+const ball5Element = document.querySelector('.js-ball5');
 
 let counterHours = 0;
 let counterSeconds = 0;
@@ -28,6 +33,11 @@ function handleStartBtn(evt) {
   }
   endElement.innerHTML = '';
   paintTimer(counterHours, counterMinutes, counterSeconds);
+  ball1Element.classList.add('bouncingBall1-animated');
+  ball2Element.classList.add('bouncingBall2-animated');
+  ball3Element.classList.add('bouncingBall3-animated');
+  ball4Element.classList.add('bouncingBall4-animated');
+  ball5Element.classList.add('bouncingBall5-animated');
 }
 
 function handleCounter() {
