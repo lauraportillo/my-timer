@@ -64,6 +64,11 @@ function handleCounter() {
 function handlePauseBtn(evt) {
   evt.preventDefault();
   clearInterval(interval);
+  ball1Element.classList.remove('bouncingBall1-animated');
+  ball2Element.classList.remove('bouncingBall2-animated');
+  ball3Element.classList.remove('bouncingBall3-animated');
+  ball4Element.classList.remove('bouncingBall4-animated');
+  ball5Element.classList.remove('bouncingBall5-animated');
 }
 
 function handleStopBtn(evt) {
