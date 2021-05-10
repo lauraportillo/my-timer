@@ -30,14 +30,14 @@ function handleStartBtn(evt) {
   if (counterHours !== 0 || counterMinutes !== 0 || counterSeconds !== 0) {
     // 1000 milisegundo se trabaja en informática equivale a cada 1 segundo
     interval = setInterval(handleCounter, 1000);
+    ball1Element.classList.add('bouncingBall1-animated');
+    ball2Element.classList.add('bouncingBall2-animated');
+    ball3Element.classList.add('bouncingBall3-animated');
+    ball4Element.classList.add('bouncingBall4-animated');
+    ball5Element.classList.add('bouncingBall5-animated');
   }
   endElement.innerHTML = '';
   paintTimer(counterHours, counterMinutes, counterSeconds);
-  ball1Element.classList.add('bouncingBall1-animated');
-  ball2Element.classList.add('bouncingBall2-animated');
-  ball3Element.classList.add('bouncingBall3-animated');
-  ball4Element.classList.add('bouncingBall4-animated');
-  ball5Element.classList.add('bouncingBall5-animated');
 }
 
 function handleCounter() {
