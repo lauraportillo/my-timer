@@ -27,6 +27,9 @@ function handleStartBtn(evt) {
   counterMinutes = parseInt(minutesElement.value);
   counterSeconds = parseInt(secondsElement.value);
 
+  if (counterElement !== 0) {
+  }
+
   if (counterHours !== 0 || counterMinutes !== 0 || counterSeconds !== 0) {
     // 1000 milisegundo se trabaja en informática equivale a cada 1 segundo
     interval = setInterval(handleCounter, 1000);
